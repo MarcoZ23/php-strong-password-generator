@@ -1,13 +1,15 @@
 <?php 
+session_start();
+
 require_once 'functions.php';
   
    // var_dump($_GET) ; 
+   $_SESSION['password'] = generator($_GET['lunghezza']);
 
    if (isset($_GET['lunghezza'])) {
-        echo generator($_GET['lunghezza']);
+        header('Location: ./result.php');
     } 
 
-   
 ?>
 
 <!DOCTYPE html>
